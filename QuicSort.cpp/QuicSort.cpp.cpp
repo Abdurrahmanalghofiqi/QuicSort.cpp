@@ -81,17 +81,32 @@ void q_short(int low, int high)
 		}
 	}
 	//j now containt the index of the last element in the sorted list
-	if (low < j)
+	if (low < j)									// Langkah 11
 	{
 		//move the pivot to its correct position in the list
 		swap(low, j);
 		mov_count++;
 	}
 	//sort the list on the left of pivot using quck sort
-	q_short(low, j - 1);
+	q_short(low, j - 1);							// Langkah 12
 
 	//sort the list on the right of pivot using quick sort
-	q_short(j + 1, high);
+	q_short(j + 1, high);							// Langkah 13
 
 
+}
+
+
+void display() {
+	cout << "\n----------------" << endl;
+	cout << "\nSorted Array" << endl;
+	cout << "\n----------------" << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "";
+	}
+
+	cout << "\n\nNumber of comparasions: " << cmp_count << endl;
+	cout << "Number of data movements: " << mov_count << endl;
 }
